@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if/else Statement</title>
+</head>
+<body>
+    <form id="formsubmit">
+        <label>If/else statement(Odd even Number)</label>
+        <input type="number" name="oddeven" id="oddeven">
+        <input type="submit" value="submit">
+    </form>
+    <p id="evenodd"></p>
+</body>
+</html>
+<script>
+    document.getElementById('formsubmit').addEventListener('submit' , function (event){
+        event.preventDefault();
+        let number = document.getElementById('oddeven').value;
+        if(number % 2 == 0){
+            document.getElementById('evenodd').innerText = `even`;
+            return;
+        }
+        document.getElementById('evenodd').innerText = `odd`;
+    })
+</script>
