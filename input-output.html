@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Output Example</title>
+</head>
+<body>
+    <form id="submitform">
+        <label for="nameinput">Enter Your Name</label>
+        <input type="text" id="nameinput" name="name">
+        <input type="submit" value="submit">
+    </form>
+    <div id="greeting"></div>
+</body>
+</html>
+<script>
+    let namearr = [];
+    document.getElementById('submitform').addEventListener('submit', function (event){
+        event.preventDefault();
+        let name = document.getElementById('nameinput').value;
+        // console.log(name)
+      //  document.getElementById('greeting').innerHTML= `Hello my name is ${name}`;
+      // for showing multiple name we will create an array and push all input in that array
+      appendNames(name);
+    //  appendName(name);
+    });
+
+    // with map method
+    // function appendName(name) {
+    // if(name){
+    //     namearr.push(name); // pushing the name in array
+    //     console.log(namearr)
+    //     document.getElementById('nameinput').value = ''; // clearing the input value
+    //     let names = document.getElementById('greeting');
+    //     names.innerHTML = namearr.map((name,index) => 
+    //         `<p>Name ${index + 1}: ${name}</p>`).join('');
+            
+    //     }
+    // }
+    // with core javascript
+    function appendNames(name) {
+        if(name){
+            namearr.push(name)
+            document.getElementById('nameinput').value = ''; // clearing the input value
+            greetingDiv = document.getElementById('greeting');
+            greetingDiv.innerHTML = '';
+            namearr.forEach((name,index) => {
+                let p = document.createElement('p');
+                p.innerText = `Name ${index + 1}: ${name}`;
+                greetingDiv.appendChild(p);
+            });
+        }
+    }
+</script>
