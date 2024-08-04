@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Type In javascript</title>
+</head>
+<body>
+    <label>Premitive Data Type</label>
+    <div id="datatype"></div>
+</body>
+</html>
+<script>
+    let num = 4;
+    let floatNum = 3.14;
+    let string = 'Hello World';
+    let datatrue = true;
+    let datafalse = false;
+    let nullVlaue = null;
+    let undefinedValue;
+    let divData = document.getElementById('datatype');
+    let p = document.createElement('p');
+    p.innerText = `Used for integers - ${num}`;
+    let p2 = document.createElement('p');
+    p2.innerText = `floating-point numbers - ${floatNum}`;
+    let p3 = document.createElement('p');
+    p3.innerText = `Used for textual data - ${string}`;
+    let p4 = document.createElement('p');
+    p4.innerText = `Used for true/false values(Booleans) - ${datatrue}/${datafalse}`
+    let p5 = document.createElement('p5');
+    p5.innerText = `Represents the intentional absence of any object value - ${nullVlaue}`
+    let p6 = document.createElement('p')
+    p6.innerText = `Indicates a variable that has not been assigned a value - ${undefinedValue}`
+    divData.appendChild(p);
+    divData.appendChild(p2);
+    divData.appendChild(p3);
+    divData.appendChild(p4);
+    divData.appendChild(p5);
+    divData.appendChild(p6);
+</script>
